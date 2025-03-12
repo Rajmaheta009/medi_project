@@ -1,0 +1,634 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #7a7a7a;
+    text-align: center;
+}
+
+.top-bar i {
+    margin-right: 5px;
+}
+
+.top-bar a {
+    color: #7a7a7a;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+    max-width: 1100px !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.logo h1 span {
+    color: #00a9e0;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+.contact-info {
+    display: flex;
+    margin-left: 64%;
+}
+
+.contact-info img {
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.nav-bar {
+    position: sticky;
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-bar a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.carousel-inner {
+    height: 500px;
+    position: relative;
+    border-radius: 18px;
+}
+
+.carousel-inner img {
+    display: block;
+    padding-bottom: 20px;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.card1 {
+    position: relative;
+    width: 250px;
+    /* Adjust width as needed */
+    a {
+        text-decoration: none;
+    }
+}
+
+.add-to-cart-btn {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    /* Transparent blue background */
+    color: #65c5e4;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+    border-color: #65c5e4;
+    border-width: 2px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #65c5e4;
+    color: #ffffff;
+    /* Darker blue on hover */
+}
+
+.image:hover .add-to-cart-btn {
+    opacity: 1;
+    /* Show button on hover */
+}
+
+.image:hover img {
+    background-color: #ffffff;
+    opacity: 0.3;
+    /* Slight zoom for a modern look */
+}
+
+.card1 img {
+    background: transparent;
+    border-radius: 20px;
+    justify-content: center;
+    /* padding-bottom: 15px; */
+    margin: auto;
+    width: 100%;
+    /* Sets the width to 100% of the parent container */
+    height: 200px;
+    /* Maintains the aspect ratio of the image */
+    max-width: 500px;
+    /* Optionally, set a maximum width */
+}
+
+.card1 .description {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* Blue background for hover effect */
+    opacity: 0;
+    z-index: 1;
+}
+
+.hover-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    /* Button background color */
+    color: black;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2;
+    border-radius: 35px;
+}
+
+.image-container:hover .overlay {
+    opacity: 0.6;
+    /* Adjust overlay opacity as needed */
+}
+
+.image-container:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.image-container:hover .hover-button {
+    opacity: 1;
+}
+
+.container h4 {
+    margin-top: 40px;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 70px;
+    height: 300px;
+    top: -50px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+}
+
+
+/* Banner Styling */
+
+
+/* Banner Styling */
+
+.banner {
+    /* content: none; */
+    background: center;
+    background-image: url(../image/banner-back.jpg);
+    background-size: auto;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: start;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.btn-banner {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-banner:hover {
+    background-color: white;
+    color: #000;
+}
+
+
+/* Dark Overlay */
+
+.banner::before {
+    content: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Transparent dark overlay */
+    z-index: 0;
+    margin-bottom: 60px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    /* Adjust the width as needed */
+    height: 150px;
+    /* Adjust the height as needed */
+    padding: 20px;
+    border: none;
+    /* Optional background */
+}
+
+.icon {
+    flex-shrink: 0;
+    /* Prevents the icon from shrinking */
+    font-size: 40px;
+    /* Adjust icon size as needed */
+    margin-right: 20px;
+    /* Adds space between the icon and text */
+    margin-bottom: 20%;
+}
+
+.details {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.details h4 {
+    margin: 0;
+    font-size: 18px;
+    /* Adjust font size as needed */
+}
+
+.details p {
+    margin-top: 10px;
+    font-size: 14px;
+    /* Adjust font size as needed */
+}
+
+.footer {
+    display: flex;
+    background-color: #007bff;
+    /* Blue background */
+}
+
+.footer h5 {
+    color: #ffffff;
+    /* White text color for headings */
+    font-weight: bold;
+}
+
+.footer p,
+.footer ul li {
+    color: #e1e1e1;
+    /* Light grey text color for paragraph and list items */
+}
+
+.footer a:hover {
+    color: #ffc107;
+    /* text-decoration: none; */
+    /* Highlight links on hover */
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer .fab:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.footer .fab {
+    font-size: 1.5rem;
+    /* Icon size */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card img {
+    border-radius: 20px;
+}
+
+.form-control {
+    height: 36px;
+    background: #e0e0e0;
+    color: #000;
+    font-size: 14px;
+    border-radius: 2px;
+    box-shadow: none !important;
+    border: 1px solid #000;
+}
+
+.contactform .form-control {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 0;
+}
+
+.bi {
+    font-size: 40px;
+}
+
+.product-page {
+    padding: 50px 0;
+}
+
+.rr img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.product-details {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    color: #28a745;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.specifications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.specifications-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.item {
+    background: #ff3f4d;
+}
+
+.p_header {
+    background-color: #65c5e4;
+    color: white;
+    padding: 10px 15%;
+}
+
+.card .product-de {
+    position: relative;
+    padding: 0 0 70px 40px;
+    float: right;
+}
+
+.card .button {
+    border-color: transparent;
+    border-radius: 20px;
+    width: 20%;
+    height: 15%;
+    background-color: #65c5e4;
+    color: #dddddd;
+}
+
+.card .button:hover {
+    background-color: #dddddd;
+    color: #00a9e0;
+}
+
+.product-count {
+    margin-top: 15px;
+}
+
+.product-count .qtyminus,
+.product-count .qtyplus {
+    width: 34px;
+    height: 34px;
+    background: #65c5e4;
+    text-align: center;
+    font-size: 19px;
+    line-height: 36px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.product-count .qtyminus {
+    border-radius: 3px 0 0 3px;
+}
+
+.product-count .qtyplus {
+    border-radius: 0 3px 3px 0;
+}
+
+.product-count .qty {
+    width: 60px;
+    text-align: center;
+}
+
+.descri .des {
+    border: 1px;
+    border-radius: 15px;
+    background-color: #65c5e4;
+    color: #ffffff;
+    width: 13%;
+    height: 45px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.descri .des:hover {
+    background-color: #e6e6e6;
+    color: #65c5e4;
+}
+
+.des_pragraf {
+    opacity: 1;
+    max-height: 1000px;
+    /* Large enough to fit the content */
+    overflow: hidden;
+    padding: 30px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 30px;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    max-height: 1000px;
+    /* Adjust this based on the height of your content */
+    padding: 30px;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.table img {
+    width: 20%;
+    height: auto;
+}
+
+.update-btn button {
+    border-width: 0.5px;
+    margin-top: 15px;
+    width: 25%;
+    height: 41px;
+    padding: 0 0 10px 10px;
+    .bi {
+        font-size: 25px;
+        margin-left: 45%;
+    }
+}
+
+.checkout-btn button {
+    color: #ffffff;
+    border: 0;
+    background-color: #65c5e4;
+    margin-top: 15px;
+    width: 25%;
+    padding: 0 0 10px 10px;
+    height: 41px;
+    .bi {
+        font-size: 23px;
+        margin-left: 60%;
+    }
+}
+
+.checkout-btn button:hover {
+    /* color: #ffffff; */
+    background-color: #3c9ab9;
+}
+
+.profile-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 5px solid #65c5e4;
+}
+
+.profile-name {
+    color: #343a40;
+}
+
+.profile-role {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.activity-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.activity-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-date {
+    font-size: 12px;
+}
+
+.activity-text {
+    font-size: 16px;
+    color: #343a40;
+}
+
+.btn-outline-primary {
+    color: #65c5e4;
+    border-color: #65c5e4;
+}
+
+.btn-outline-primary:hover {
+    background-color: #65c5e4;
+    color: #fff;
+}

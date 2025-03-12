@@ -1,0 +1,290 @@
+/* Sidebar */
+
+:root {
+    --bs-table-color: #ffff;
+}
+
+.table {
+    --bs-table-striped-color: #ffff;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    background-color: #343a40;
+    color: #fff;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+    height: 100vh;
+    #sing_out {
+        bottom: 0;
+    }
+}
+
+.sidebar .nav {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Allows scrolling if content overflows */
+}
+
+.sidebar .nav-item:last-child {
+    margin-top: auto;
+    /* Push the "Sign out" button to the bottom */
+}
+
+.sidebar .nav-link img {
+    margin-right: 10px;
+}
+
+.sidebar .nav-link span {
+    display: inline;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .nav-link span {
+    opacity: 0;
+    display: none;
+}
+
+.sidebar .nav-link i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.sidebar .nav-link {
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+    color: #adb5bd;
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+    color: #333;
+    padding-left: 20px;
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+.sidebar .nav-link.active:hover {
+    color: #fff;
+    padding-left: 15px;
+}
+
+
+/* Green Track */
+
+input[type="checkbox"].green.ios-switch:checked+div {
+    background-color: #00e359;
+    border: 1px solid rgba(0, 162, 63, 1);
+    box-shadow: inset 0 0 0 10px rgba(0, 227, 89, 1);
+}
+
+
+/* Main Content */
+
+.main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    width: calc(100% - 250px);
+}
+
+.main-content.shifted {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+.toggle-btn {
+    position: absolute;
+    left: 103%;
+    width: 35px;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    z-index: 1100;
+    border: none;
+    transition: left 0.3s ease;
+}
+
+.sidebar.collapsed .toggle-btn {
+    left: 115%;
+}
+
+
+/* Charts */
+
+.dark-mode .chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -10px;
+    padding: 20px;
+    margin-left: 70px;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 65px;
+    margin-left: 70px;
+    padding: 20px;
+}
+
+.chart-card {
+    flex: 1;
+    min-width: 300px;
+    /* max-width: 100%; */
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card .card-body {
+    padding: 20px;
+}
+
+.chart-container canvas {
+    height: 300px;
+    width: 100% !important;
+}
+
+
+/* Table Styling */
+
+table {
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    text-align: center;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #333;
+}
+
+.table {
+    /* -bs-table-color: white var(--bs-body-color);
+    --bs-table-bg: black var(--bs-body-bg); */
+}
+
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+    /* Ensures the text color is white throughout */
+}
+
+body.dark-mode .table {
+    background-color: #333;
+    --bs-table-bg: #212529 !important;
+    --bs-table-striped-color: #ffff !important;
+    --bs-table-color: #ffff !important;
+}
+
+body.dark-mode .table thead th {
+    background-color: #333;
+    color: #fff;
+    /* Ensures the text color in the header is white */
+}
+
+body.dark-mode .table tbody tr {
+    background-color: #333;
+    /* Row background in dark mode */
+    color: #fff;
+    /* Row text color set to white */
+}
+
+body.dark-mode .btn {
+    color: #fff;
+    /* Button text color in dark mode */
+    background-color: #333;
+    /* Button background in dark mode */
+}
+
+
+/* Cards in Dark Mode */
+
+.dark-mode .card {
+    background-color: #121212;
+    border: 1px solid #444;
+    color: #ccc;
+    margin-top: 6%;
+}
+
+.dark-mode .card img {
+    border: 1px solid #444;
+    filter: brightness(90%);
+}
+
+
+/* Chart Title in Dark Mode */
+
+.dark-mode .card-title {
+    color: #ddd;
+}
+
+
+/* Product Cards */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensure wrapping works correctly */
+}
+
+.card {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.15));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 300px;
+    padding: 20px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* margin-top: -200px; */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 270px;
+    height: 200px;
+    top: -70px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 210px;
+    border-radius: 4px;
+}
+
+.image-wrapper {
+    margin-top: 15px;
+}
+
+
+/* Bootstrap CSS */
+
+.btn-check:focus+.btn,
+.btn:focus {
+    box-shadow: none !important;
+}
