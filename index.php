@@ -1,0 +1,1 @@
+<?php include 'client_side/home_page.php'?>
