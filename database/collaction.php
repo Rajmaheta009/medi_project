@@ -5,7 +5,7 @@ use MongoDB\Client;
 // use MongoDB\BSON\ObjectID;
 
 // MongoDB connection
-$conn = new Client('mongodb://localhost:27017/?authSource=raj');
+$conn = new Client('mongodb://localhost:27017');
 
 // Database and collection for 'raj'
 $raj_database = $conn->selectDatabase('raj');

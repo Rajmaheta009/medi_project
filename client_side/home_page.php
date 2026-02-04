@@ -19,7 +19,7 @@ include 'include/header.php'; ?>
     <!-- Statistic Cards -->
     <div class="row">
         <div class="col-4">
-            <div class="card" style="border:none; padding: 0px;">
+                <div class="card" style="border:none; padding: 0px;">
                 <img src="assets/image/banner.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Medical And Health</h5>
@@ -27,7 +27,7 @@ include 'include/header.php'; ?>
             </div>
         </div>
         <div class="col-4">
-            <div class="card" style="border:none; padding: 0px;">
+                <div class="card" style="border:none; padding: 0px;">
                 <img src="assets/image/banner-1-1.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Personal Care</h5>
@@ -35,7 +35,7 @@ include 'include/header.php'; ?>
             </div>
         </div>
         <div class="col-4">
-            <div class="card" style="border:none; padding: 0px;">
+                <div class="card" style="border:none; padding: 0px;">
                 <img src="assets/image/banner-2.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Diet And Fitness</h5>
@@ -47,7 +47,7 @@ include 'include/header.php'; ?>
     <div class="row row-col-md-3 g-4 py-5">
         <div class="owl-carousel">
             <?php
-            include '../database/collaction.php';
+            include 'database/collaction.php';
             $products = $product_collection->find()->toArray();
             $filter_product = array_filter($products, function ($product) {
                 return $product['check'] == true && $product['delete'] == false;
@@ -57,9 +57,9 @@ include 'include/header.php'; ?>
                 <div class="col-auto">
                     <div class="card1">
                         <div class="image">
-                            <img src="../admin_side/assets/image/<?php echo $product['image']; ?>" alt="Product Image">
+                            <img src="admin_side/assets/image/<?php echo $product['image']; ?>" alt="Product Image">
                             <!-- Add a form with hidden input to send product ID and other details -->
-                            <a href="cart.php?id=<?php echo urlencode($product['_id']); ?>"><button class="add-to-cart-btn">Add to Cart</button></a>
+                            <a href="client_side/cart.php?id=<?php echo urlencode($product['_id']); ?>"><button class="add-to-cart-btn">Add to Cart</button></a>
                         </div>
                         <?php
                         $value = $product['_id'];

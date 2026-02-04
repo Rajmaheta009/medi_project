@@ -1,4 +1,6 @@
-<?php include 'include/header.php'; ?>
+<?php
+session_start();
+include 'include/header.php'; ?>
 
 <div class="p_header text-center" style="justify-content:center !important;">
     <h1>BASKET</h1>
@@ -6,8 +8,7 @@
 
 <div class="container product-page my-5">
     <?php
-    session_start();
-    include '../database/collaction.php';
+    
 
     // Initialize cart if it's not set
     if (!isset($_SESSION['cart'])) {
@@ -88,7 +89,7 @@
                                 <div class="qtyplus" onclick="changeQuantity('<?php echo $item['id']; ?>', 1)" style="cursor:pointer;">+</div>
                             </form>
                         </td>
-                        <td id="price_<?php echo $item['id']; ?>">$<?php echo number_format($itemTotal, 2); ?></td>
+                        <td id="price_<?php echo $item['id']; ?>" data-unit-price="<?php echo $item['price']; ?>">$<?php echo number_format($itemTotal, 2); ?></td>
                         <td>
                             <form action="#" method="POST">
                                 <input type="hidden" name="product_id" value="<?php echo $item['id']; ?>">
@@ -127,15 +128,15 @@
         var totalAmountElement = document.getElementById('totalAmount');
 
         var currentQty = parseInt(qtyInput.value);
-        var price = parseFloat(priceElement.innerText.replace('$', '').replace(',', ''));
+        var unitPrice = parseFloat(priceElement.getAttribute('data-unit-price'));
 
         // Update quantity and price display
         if (currentQty + change >= 1) {
             currentQty += change;
             qtyInput.value = currentQty;
 
-            // Update the price display for the current item
-            var itemTotalPrice = currentQty * price  / (currentQty - change); ;
+            // Update the price display for the current item (unitPrice * qty)
+            var itemTotalPrice = currentQty * unitPrice;
             priceElement.innerText = '$' + itemTotalPrice.toFixed(2);
 
             // Recalculate total amount
