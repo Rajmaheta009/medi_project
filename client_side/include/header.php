@@ -35,7 +35,7 @@
         <div class="top-right">
             <a href="<?=BASE_PATH ?>cart.php">Checkout</a>
             <a href="<?=BASE_PATH ?>profile.php">My Account</a>
-            <a href="../login_registration/login_registration.html">Login</a>
+            <a href="../login_registration/login_registration.php">Login</a>
         </div>
     </div>
 </div>

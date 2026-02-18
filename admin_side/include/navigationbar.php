@@ -54,7 +54,7 @@
                             </a>
                         </li>
                         <li class="nav-item" style="position:fixed; bottom:0;" id="sing_out">
-                            <a class="nav-link text-light d-flex align-items-end" href="../login_registration/login_registration.html">
+                            <a class="nav-link text-light d-flex align-items-end" href="../login_registration/login_registration.php">
                                 <i class="fa-solid fa-right-from-bracket"></i> <span>Sing out</span>
                             </a>
                         </li>

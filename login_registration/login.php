@@ -1,67 +1,46 @@
 <?php
+session_start();
 include "../database/collaction.php";
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = trim($_POST['email']);
+    $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // ✅ CORRECT COLLECTION
+    if (empty($email) || empty($password)) {
+        $_SESSION['error'] = "Please enter email and password.";
+        $_SESSION['form_type'] = "login";
+        header("Location: login_registration.php");
+        exit();
+    }
+
     $user = $login_registration_collection->findOne(['email' => $email]);
 
-    if ($user && $password == $user['password']) {
-
-        $role = $user['role'] ?? 'client';
-
-        if ($role == 'admin' || $role == 'manager') {
-
-            echo '<script src="../admin_side/assets/js/sweetalert.js"></script>
-            <script>
-            window.onload = function(){
-                swal({
-                    title: "Login Successful",
-                    icon: "success",
-                    button: "Proceed to Dashboard",
-                }).then(function(){
-                    window.location.href = "../admin_side/dashboard.php";
-                });
-            };
-            </script>';
-
-        } else {
-
-            echo '<script src="../admin_side/assets/js/sweetalert.js"></script>
-            <script>
-            window.onload = function(){
-                swal({
-                    title: "Login Successful",
-                    icon: "success",
-                    button: "Proceed to Home",
-                }).then(function(){
-                    window.location.href = "../client_side/home_page.php";
-                });
-            };
-            </script>';
-        }
-
-    } else {
-
-        // ✅ USE SAME COLLECTION HERE ALSO
-        $check = $login_registration_collection->findOne(['email' => $email]);
-
-        $msg = $check ? "Invalid Password" : "Invalid Email";
-
-        echo '<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
-        <script>
-        window.onload = function(){
-            alertify.set("notifier","position", "top-right");
-            alertify.error("'.$msg.'");
-
-            setTimeout(function(){
-                window.location.href = "login_registration.html";
-            }, 1200);
-        };
-        </script>';
+    if (!$user) {
+        $_SESSION['error'] = "No account found with this email.";
+        $_SESSION['form_type'] = "login";
+        header("Location: login_registration.php");
+        exit();
     }
+
+    if (!password_verify($password, $user['password'])) {
+        $_SESSION['error'] = "Incorrect password. Please try again.";
+        $_SESSION['form_type'] = "login";
+        header("Location: login_registration.php");
+        exit();
+    }
+
+    // Login success
+    $_SESSION['user_id']  = (string)$user['_id'];
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['role']     = $user['role'] ?? 'client';
+
+    if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'manager') {
+        header("Location: ../admin_side/dashboard.php");
+    } else {
+        header("Location: ../client_side/home_page.php");
+    }
+
+    exit();
 }
 ?>
