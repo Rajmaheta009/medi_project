@@ -19,24 +19,24 @@ include 'include/header.php'; ?>
     <!-- Statistic Cards -->
     <div class="row">
         <div class="col-4">
-                <div class="card" style="border:none; padding: 0px;">
-                <img src="assets/image/banner.jpg" class="card-img" alt="...">
+                <div class="card">
+                <img src="client_side/assets/image/banner.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Medical And Health</h5>
                 </div>
             </div>
         </div>
         <div class="col-4">
-                <div class="card" style="border:none; padding: 0px;">
-                <img src="assets/image/banner-1-1.jpg" class="card-img" alt="...">
+                <div class="card">
+                <img src="client_side/assets/image/banner-1-1.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Personal Care</h5>
                 </div>
             </div>
         </div>
         <div class="col-4">
-                <div class="card" style="border:none; padding: 0px;">
-                <img src="assets/image/banner-2.jpg" class="card-img" alt="...">
+                <div class="card">
+                <img src="client_side/assets/image/banner-2.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Diet And Fitness</h5>
                 </div>
@@ -44,7 +44,7 @@ include 'include/header.php'; ?>
         </div>
     </div>
     <h4>Featured Products</h4>
-    <div class="row row-col-md-3 g-4 py-5">
+    <div class="row row-cols-md-3 g-4 py-5">
         <div class="owl-carousel">
             <?php
             include 'database/collaction.php';
@@ -59,13 +59,13 @@ include 'include/header.php'; ?>
                         <div class="image">
                             <img src="admin_side/assets/image/<?php echo $product['image']; ?>" alt="Product Image">
                             <!-- Add a form with hidden input to send product ID and other details -->
-                            <a href="client_side/cart.php?id=<?php echo urlencode($product['_id']); ?>"><button class="add-to-cart-btn">Add to Cart</button></a>
+                            <a href="<?=BASE_PATH ?>cart.php?id=<?php echo urlencode($product['_id']); ?>"><button class="add-to-cart-btn">Add to Cart</button></a>
                         </div>
                         <?php
                         $value = $product['_id'];
                         echo "<script>localStorage.setItem('product-id', '$value');</script>";
                         ?>
-                        <a href="product_detail.php?id=<?php echo $product['_id']; ?>">
+                        <a href="<?=BASE_PATH ?>product_detail.php?id=<?php echo $product['_id']; ?>">
                             <div class="description">
                                 <h6><?php echo htmlspecialchars($product['name']); ?></h6>
                                 <h6><?php echo htmlspecialchars($product['type']); ?></h6>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once '../database/collaction.php'; ?>
+
+<?php require_once "config.php"  ?> 
+<?require_once BASE_PATH . '/database/collaction.php';?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -16,37 +19,56 @@
 
     
 </head>
-
 <body>
-    <div class="top-bar" id="header">
-        <i class="fas fa-map-marker-alt">Surat,Gujarat</i>
-        <i class="fas fa-phone">7600230222</i>
-        <i class="fas fa-envelope"><a href="mailto:example@medicine-plus.com">R@JMAHETA.COM</a></i>
-        <a href="cart.php">CHECKOUT</a>
-        <a href="profile.php">MY ACCOUNT</a>
-        <a href="../login_registration/login_registration.html">LOG IN</a>
-    </div>
-    <div class="header">
-        <div class="logo">
-            <a href="home_page.php" class="text-decoration-none">
-                <img src="https://as2.ftcdn.net/v2/jpg/02/30/64/81/1000_F_230648151_hvErfnvVFY4NVT14AlRxwW6GfbLqdX0B.jpg" alt="Shopping cart with a medical cross">
-                <div>
-                    <h1>Medicine <span>Plus</span></h1>
-                    <p>welcome to our online store</p>
-                </div>
-            </a>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="top-left">
+            <span><i class="fas fa-map-marker-alt"></i> Surat, Gujarat</span>
+            <span><i class="fas fa-phone ms-3"></i> 7600230222</span>
+            <span><i class="fas fa-envelope ms-3"></i> 
+                <a href="mailto:example@medicine-plus.com">R@JMAHETA.COM</a>
+            </span>
         </div>
-        <div class="contact-info">
-            <img src="https://as1.ftcdn.net/v2/jpg/03/36/13/14/1000_F_336131422_TdgWcydQotDk1L9yKYiXmUHqOkQSj052.jpg" alt="Customer service representative">
-            <div>
-                <p>Have A Question?</p>
+
+        <div class="top-right">
+            <a href="<?=BASE_PATH ?>cart.php">Checkout</a>
+            <a href="<?=BASE_PATH ?>profile.php">My Account</a>
+            <a href="../login_registration/login_registration.html">Login</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Main Header -->
+<div class="main-header">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <!-- Logo -->
+        <a href="home_page.php" class="logo-area text-decoration-none d-flex align-items-center">
+            <img src="https://as2.ftcdn.net/v2/jpg/02/30/64/81/1000_F_230648151_hvErfnvVFY4NVT14AlRxwW6GfbLqdX0B.jpg" alt="">
+            <div class="ms-2">
+                <h4 class="mb-0">Medicine <span>Plus</span></h4>
+                <small>Welcome to our online store</small>
+            </div>
+        </a>
+
+        <!-- Contact -->
+        <div class="header-contact d-flex align-items-center">
+            <img src="https://as1.ftcdn.net/v2/jpg/03/36/13/14/1000_F_336131422_TdgWcydQotDk1L9yKYiXmUHqOkQSj052.jpg" alt="">
+            <div class="ms-2">
+                <small>Have a Question?</small><br>
                 <a href="contact_as.php">Chat with us!</a>
             </div>
         </div>
-        <a href="cart.php" class="text-decoration-none">
-            <div class="cart">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
+
+        <!-- Cart -->
+        <a href="cart.php" class="cart-icon text-decoration-none">
+            <i class="fas fa-shopping-cart"></i>
         </a>
+
     </div>
-    <?php include 'navigation.php'; ?>
+</div>
+
+<?php include 'navigation.php'; ?>
